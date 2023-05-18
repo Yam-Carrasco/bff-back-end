@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "login": "robot -d Results -t Login ./Clients/Boticario.robot",
-    "Bank": "robot -d Results -t Bank ./Clients/Boticario.robot"
+    "bank": "robot -d Results -t Bank ./Clients/Boticario.robot"
   },
   "author": "",
   "license": "ISC"
