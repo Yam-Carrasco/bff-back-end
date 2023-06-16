@@ -5,7 +5,8 @@ name: CI
 # Controls when the workflow will run
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
-  workflow_call:
+  repository_dispatch:
+    types: ["Triggered by API"]
     
   push:
     branches: [ "main" ]
@@ -43,3 +44,7 @@ jobs:
 
       - name: Run Curl Message To Slack
         run: robot ./tests/robot/Helpers/Curl_Slack.robot
+        
+      - name: A event received
+        run: |
+          echo "payload Foo '${{ github.event.client_payload.foo }}'"
